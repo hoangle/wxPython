@@ -32,7 +32,7 @@ MAKE_CONST_WXSTRING2(TreeListCtrlNameStr,    wxT("treelistctrl"));
 // wxTreeListCtrl - the multicolumn tree control
 //----------------------------------------------------------------------------
 
-
+namespace wxcode {
 
 enum {
     DEFAULT_COL_WIDTH = 100
@@ -57,6 +57,7 @@ enum {
 enum {
     wxTREE_HITTEST_ONITEMCOLUMN
 };
+}
 %pythoncode { wx.TREE_HITTEST_ONITEMCOLUMN = TREE_HITTEST_ONITEMCOLUMN }
 
 
@@ -89,7 +90,7 @@ wx.TR_DONT_ADJUST_MAC = TR_DONT_ADJUST_MAC
 
 
 
-
+namespace wxcode {
 class wxTreeListColumnInfo: public wxObject {
 public:
     wxTreeListColumnInfo(const wxString& text = wxPyEmptyString,
@@ -126,11 +127,12 @@ public:
     %property(Editable, IsEditable, SetEditable);
     %property(Shown, IsShown, SetShown);
 };
-
+}
 
 
 
 %{ // C++ version of Python aware control
+namespace wxcode {
 class wxPyTreeListCtrl : public wxTreeListCtrl {
     DECLARE_ABSTRACT_CLASS(wxPyTreeListCtrl);
 public:
@@ -185,7 +187,7 @@ public:
 };
 
 IMPLEMENT_ABSTRACT_CLASS(wxPyTreeListCtrl, wxTreeListCtrl)
-
+}
 %}
 
 
@@ -196,6 +198,7 @@ IMPLEMENT_ABSTRACT_CLASS(wxPyTreeListCtrl, wxTreeListCtrl)
 MustHaveApp(wxPyTreeListCtrl);
 
 %rename(TreeListCtrl) wxPyTreeListCtrl;
+namespace wxcode {
 class wxPyTreeListCtrl : public wxControl
 {
 public:
@@ -697,6 +700,7 @@ public:
     %property(StateImageList, GetStateImageList, SetStateImageList, doc="See `GetStateImageList` and `SetStateImageList`");
     %property(CurrentItem, GetCurrentItem, SetCurrentItem);
 };
+}
 
 //----------------------------------------------------------------------
 

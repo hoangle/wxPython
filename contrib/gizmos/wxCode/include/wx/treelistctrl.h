@@ -19,6 +19,10 @@
 #include <wx/pen.h>
 #include <wx/listctrl.h> // for wxListEvent
 
+#if wxCHECK_VERSION(2,9,0)
+namespace wxcode {
+#endif
+
 #ifdef GIZMOISDLL
 #define GIZMODLLEXPORT WXDLLEXPORT
 #else
@@ -553,3 +557,6 @@ private:
 
 #endif // TREELISTCTRL_H
 
+#if wxCHECK_VERSION(2,9,0)
+} // namespace wxcode
+#endif
