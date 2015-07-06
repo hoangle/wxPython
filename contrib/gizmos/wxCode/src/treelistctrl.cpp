@@ -45,6 +45,9 @@
 
 #include "wx/treelistctrl.h"
 
+#if wxCHECK_VERSION(2,9,0)
+namespace wxcode {
+#endif
 
 // ---------------------------------------------------------------------------
 // array types
@@ -4905,3 +4908,7 @@ wxString wxTreeListCtrl::OnGetItemText( wxTreeItemData* WXUNUSED(item), long WXU
 {
     return wxEmptyString;
 }
+
+#if wxCHECK_VERSION(2,9,0)
+} // namespace wxcode
+#endif

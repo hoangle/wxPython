@@ -1575,9 +1575,9 @@ class wxGridSizer: public wxSizer
 {
 public:
     %pythonAppend wxGridSizer
-        "self._setOORInfo(self)
-        if self.Rows == 0 and self.Cols == 0:
-            self.Rows = 1"
+    "self._setOORInfo(self)
+if self.Rows == 0 and self.Cols == 0:
+    self.Rows = 1"
 
     DocCtorStr(
         wxGridSizer( int rows=0, int cols=0, int vgap=0, int hgap=0 ),
@@ -1686,10 +1686,10 @@ flexible\") direction in order to fill the available space. The
 class wxFlexGridSizer: public wxGridSizer
 {
 public:
-    %pythonAppend wxFlexGridSizer    
-        "self._setOORInfo(self)
-        if self.Rows == 0 and self.Cols == 0:
-            self.Rows = 1"
+    %pythonAppend wxFlexGridSizer
+    "self._setOORInfo(self)
+if self.Rows == 0 and self.Cols == 0:
+    self.Rows = 1"
 
     DocCtorStr(
         wxFlexGridSizer( int rows=0, int cols=0, int vgap=0, int hgap=0 ),
